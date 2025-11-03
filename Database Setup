@@ -1,0 +1,53 @@
+CREATE DATABASE IF NOT EXISTS blood_bank;
+USE blood_bank;
+
+-- Donors Table --
+CREATE TABLE Donors (
+	donor_id INT     NOT NULL      UNIQUE      AUTO_INCREMENT      PRIMARY KEY,
+    last_name VARCHAR(50)      NOT NULL,
+    first_name VARCHAR(50)      NOT NULL,
+    blood_type VARCHAR(7)     NOT NULL,
+    phone_num VARCHAR(15)      NOT NULL,
+    last_donated_date DATE     NOT NULL
+    
+    CHECK (blood_type IN ('A+', 'A-', 'B+', 'B-', 'AB+', 'AB-', 'O+', 'O-')) 
+    );
+
+-- Hospitals Table --
+CREATE TABLE Hospitals (
+	hospital_id INT     NOT NULL     UNIQUE     AUTO_INCREMENT     PRIMARY KEY,
+    hospital_name VARCHAR(100)     NOT NULL     UNIQUE,
+    address VARCHAR(255)     NOT NULL      UNIQUE
+
+);
+
+-- Blood Unit Info Table --
+CREATE TABLE BloodUnit_Info (
+	unit_id INT     NOT NULL     UNIQUE     AUTO_INCREMENT      PRIMARY KEY,
+    donor_id INT     NOT NULL,
+    donation_date DATE     NOT NULL,
+    expiry_date DATE     NOT NULL,
+    unit_status VARCHAR(20)      NOT NULL      CHECK (unit_status IN ('Available', 'Reserved', 'Issued', 'Transfused', 'Expired', 'Discarded')),
+    
+    FOREIGN KEY (donor_id) REFERENCES Donors(donor_id)
+        ON UPDATE CASCADE
+        ON DELETE SET NULL
+);
+
+-- Requests Info Table -- 
+CREATE TABLE Requests (
+	request_id INT     NOT NULL     UNIQUE     AUTO_INCREMENT     PRIMARY KEY,
+    hospital_id INT     NOT NULL,
+    unit_id INT     NOT NULL,
+    request_date DATE     NOT NULL,
+    req_status VARCHAR(20)      NOT NULL     CHECK(req_status in ('Approved', 'Pending', 'Processing', 'Transit', 'Completed', 'Cancelled')),
+    
+    FOREIGN KEY (hospital_id) REFERENCES Hospitals(hospital_id),
+    FOREIGN KEY (unit_id) REFERENCES BloodUnit_Info(unit_id)
+    
+    );
+
+
+    
+
+
