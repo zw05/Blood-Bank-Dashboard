@@ -1,14 +1,15 @@
+DROP DATABASE blood_bank;
 CREATE DATABASE IF NOT EXISTS blood_bank;
 USE blood_bank;
 
 -- Donors Table --
 CREATE TABLE Donors (
-	donor_id INT     NOT NULL      UNIQUE      AUTO_INCREMENT      PRIMARY KEY,
+	donor_id INT      UNIQUE      AUTO_INCREMENT      PRIMARY KEY,
     last_name VARCHAR(50)      NOT NULL,
     first_name VARCHAR(50)      NOT NULL,
     blood_type VARCHAR(7)     NOT NULL,
     phone_num VARCHAR(15)      NOT NULL,
-    last_donated_date DATE     NOT NULL
+    last_donated_date DATE     NOT NULL,
     
     CHECK (blood_type IN ('A+', 'A-', 'B+', 'B-', 'AB+', 'AB-', 'O+', 'O-')) 
     );
@@ -24,14 +25,14 @@ CREATE TABLE Hospitals (
 -- Blood Unit Info Table --
 CREATE TABLE BloodUnit_Info (
 	unit_id INT     NOT NULL     UNIQUE     AUTO_INCREMENT      PRIMARY KEY,
-    donor_id INT     NOT NULL,
+    donor_id INT     NULL,
     donation_date DATE     NOT NULL,
     expiry_date DATE     NOT NULL,
     unit_status VARCHAR(20)      NOT NULL      CHECK (unit_status IN ('Available', 'Reserved', 'Issued', 'Transfused', 'Expired', 'Discarded')),
     
     FOREIGN KEY (donor_id) REFERENCES Donors(donor_id)
-        ON UPDATE CASCADE
         ON DELETE SET NULL
+        
 );
 
 -- Requests Info Table -- 
