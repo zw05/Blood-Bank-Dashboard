@@ -1,0 +1,205 @@
+    /* Inventory Grid */
+
+    :root {
+        --card-color: #262637;
+        --text-color: #e4e4e4;
+        --label-color: #7f8c8d;
+        --button-color-add: #3e446e;
+        --button-color-delete: #9c4b15;
+        --border-color: #262637;
+    }
+
+    .inventory-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+        gap: 15px;
+        margin-top: 15px;
+    }
+
+    .blood-type-card {
+        background: #262637;
+        padding: 20px;
+        border-radius: 8px;
+        text-align: center;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .blood-type-card.low-stock {
+        border-left: 4px solid #e74c3c;
+    }
+
+    .blood-type-card.medium-stock {
+        border-left: 4px solid #f39c12;
+    }
+
+    .blood-type-card.good-stock {
+        border-left: 4px solid #27ae60;
+    }
+
+    .blood-type-card .type {
+        font-size: 24px;
+        font-weight: bold;
+        color: #7f8c8d;
+    }
+
+    .blood-type-card .count {
+        font-size: 32px;
+        font-weight: bold;
+        color: #e4e4e4;
+        margin: 10px 0;
+    }
+
+    .blood-type-card .label {
+        font-size: 14px;
+        color: #7f8c8d;
+    }
+
+    /* Controls Section */
+    .inventory-controls {
+        background: var(--card-color);
+        padding: 20px;
+        border-radius: 8px;
+        margin-bottom: 20px;
+        display: flex;
+        gap: 15px;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+
+    .search-input {
+        flex: 1;
+        min-width: 150px;
+        padding: 10px;
+        border: 1px solid #262637;
+        border-radius: 5px;
+    }
+
+    .filter-select {
+        padding: 10px;
+        border: 1px solid #262637;
+        border-radius: 5px;
+        background: var(--card-color);
+        color: var(--text-color);
+    }
+
+    .filter-select option {
+        color: var(--label-color);
+    }
+
+
+    /* Table Row Expiry Status */
+    .unit-row.expired {
+        background-color: #f7cddb;
+    }
+
+    .unit-row.critical,
+    .unit-row.warning {
+        background-color: #fbc796;
+    }
+
+    .unit-row.good {
+        background-color: var(--card-color);
+    }
+
+    /* Days Left Styling */
+    .days-left {
+        font-weight: bold;
+    }
+
+    .days-left.expired {
+        color: #e74c3c;
+    }
+
+    .days-left.warning {
+        color: #bba018;
+    }
+
+    .days-left.good {
+        color: #27ae60;
+    }
+
+    /* status dropdown */
+    .status-select {
+        border: none;
+        cursor: pointer;
+    }
+
+    /* Blood Type Badge */
+    .blood-type-badge {
+        background-color: #a31616;
+        color: var(--text-color);
+    }
+
+    /* Button Styles */
+    .btn-small {
+        margin-right: 5px;
+        padding: 5px 10px;
+    }
+
+    /* Table Styles */
+    .empty-message {
+        text-align: center;
+        padding: 20px;
+    }
+
+    /* Modal Styles */
+    .modal-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.5);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 1000;
+    }
+
+    .modal-content {
+        background-color: white;
+        padding: 30px;
+        border-radius: 8px;
+        width: 500px;
+        max-width: 90%;
+    }
+
+    .modal-content h3 {
+        margin-top: 0;
+        margin-bottom: 20px;
+    }
+
+    /* Form Styles */
+    .form-group {
+        margin-bottom: 15px;
+    }
+
+    .form-group label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: 500;
+    }
+
+    .form-input {
+        width: 100%;
+        padding: 8px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+
+    .modal-actions {
+        display: flex;
+        gap: 10px;
+        justify-content: flex-end;
+        margin-top: 20px;
+    }
+
+    .btn-cancel {
+        background-color: #95a5a6;
+        color: white;
+    }
+
+    .btn-cancel:hover {
+        background-color: #7f8c8d;
+    }

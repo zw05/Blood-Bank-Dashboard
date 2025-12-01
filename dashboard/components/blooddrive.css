@@ -1,0 +1,183 @@
+/* Controls Container */
+
+:root {
+    --card-color: #262637;
+    --text-color: #e4e4e4;
+    --label-color: #7f8c8d;
+    --button-color-add: #3e446e;
+    --button-color-delete: #9c4b15;
+    --border-color: #262637;
+}
+
+.controls-container {
+    background: var(--card-color);
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.search-input {
+    flex: 1;
+    min-width: 250px;
+    padding: 10px;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    background: var(--card-color);
+    color: var(--text-color);
+}
+
+/* No Data Message */
+.no-data {
+    text-align: center;
+    padding: 20px;
+    color: var(--label-color);
+}
+
+/* Button Sizes */
+.btn-small {
+    margin-right: 5px;
+    padding: 5px 10px;
+}
+
+/* Modal Overlay */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+/* Modal Content */
+.modal-content {
+    background-color: var(--card-color);
+    padding: 30px;
+    border-radius: 8px;
+    width: 500px;
+    max-width: 90%;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+.modal-content.donors-modal {
+    width: 800px;
+}
+
+.modal-content h3 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    color: var(--text-color);
+}
+
+/* Donor Count */
+.donor-count {
+    color: #7f8c8d;
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+/* Donors List */
+.donors-list {
+    margin-bottom: 20px;
+}
+
+.donors-list table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+
+.donors-list th {
+    background-color: var(--card-color);
+    color: var(--text-color);
+    padding: 10px;
+    text-align: left;
+    font-weight: 600;
+    border-bottom: 2px solid #dee2e6;
+}
+
+.donors-list td {
+    padding: 10px;
+    border-bottom: 1px solid #dee2e6;
+    color: var(--text-color);
+}
+
+.donors-list tr:hover {
+    background-color: #f8f9fa;
+}
+
+.no-donors {
+    text-align: center;
+    color: #7f8c8d;
+    padding: 20px;
+}
+
+/* Blood Type Badge */
+.blood-type-badge {
+    background-color: #e74c3c;
+    color: white;
+    padding: 4px 12px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+/* Form Groups */
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+.form-input,
+.form-textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+    color: var(--text-color);
+    background-color: var(--card-color);
+}
+
+.form-textarea {
+    resize: vertical;
+}
+
+/* Form Row for side-by-side inputs */
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+/* Form Actions */
+.form-actions {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+    margin-top: 20px;
+}
+
+.btn-cancel {
+    background-color: #95a5a6;
+    color: white;
+}
+
+.btn-cancel:hover {
+    background-color: #7f8c8d;
+}

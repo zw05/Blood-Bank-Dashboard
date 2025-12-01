@@ -1,0 +1,115 @@
+/* controls */
+:root {
+    --card-color: #262637;
+    --text-color: #e4e4e4;
+    --label-color: #7f8c8d;
+    --button-color-add: #3e446e;
+    --button-color-delete: #9c4b15;
+    --border-color: #262637;
+}
+
+.donors-controls {
+    background: var(--card-color);
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.search-input {
+    flex: 1;
+    min-width: 200px;
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 5px;
+    color: var(--text-color);
+    background: var(--card-color);
+
+}
+
+.filter-select {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+/* table */
+.empty-message {
+    text-align: center;
+    padding: 20px;
+}
+
+.blood-type-badge {
+    background-color: #e74c3c;
+    color: white;
+}
+
+.btn-small {
+    margin-right: 5px;
+    padding: 5px 10px;
+}
+
+/* modal styles */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+    width: 500px;
+    max-width: 90%;
+}
+
+.modal-content h3 {
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+/* form styles */
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 500;
+}
+
+.form-input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.modal-actions {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+    margin-top: 20px;
+}
+
+.btn-cancel {
+    background-color: #95a5a6;
+    color: white;
+}
+
+.btn-cancel:hover {
+    background-color: #7f8c8d;
+}
