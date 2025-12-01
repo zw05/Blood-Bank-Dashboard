@@ -1,0 +1,50 @@
+-- Sample Functions -- 
+
+-- Get units that are expiring 20 days before 
+SELECT *
+FROM bloodunit_info
+WHERE expiry_date <= DATE_ADD('2025-12-01', INTERVAL 20 DAY)
+  AND expiry_date >= '2025-12-01'
+  AND unit_status = 'Available';
+
+-- Get units that are expired
+SELECT *
+FROM blood_unit_info
+WHERE expiry_date < '2025-12-01'
+  AND unit_status != 'Expired';
+
+-- Get units by blood type
+SELECT bui.*
+FROM blood_unit_info bui
+INNER JOIN donor d ON bui.donor_id = d.donor_id
+WHERE d.blood_type = 'A+'  
+  AND bui.unit_status = 'Available';
+  
+-- Get inventory by blood type
+SELECT 
+    d.blood_type,
+    COUNT(bui.unit_id) AS count
+FROM donor d
+INNER JOIN blood_unit_info bui ON d.donor_id = bui.donor_id
+WHERE bui.unit_status = 'Available'
+GROUP BY d.blood_type; 
+
+-- Get donors that haven't donated in the last 60 days
+SELECT *
+FROM donor
+WHERE last_donated_date <= DATE_SUB('2025-12-01', INTERVAL 60 DAY);
+
+-- Get blood units that are low stock (baseline is 5)
+SELECT 
+    d.blood_type,
+    COUNT(bui.unit_id) AS count
+FROM donor d
+INNER JOIN blood_unit_info bui ON d.donor_id = bui.donor_id
+WHERE bui.unit_status = 'Available'
+GROUP BY d.blood_type
+HAVING COUNT(bui.unit_id) < 5;
+
+
+
+
+
