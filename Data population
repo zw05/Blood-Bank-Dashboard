@@ -1,5 +1,15 @@
--- Blood Bank Data Population (Reference Date: December 1, 2025)
--- All dates and statuses are consistent with December 1, 2025 as "today"
+-- (Reference Date: December 1, 2025)
+-- Blood Bank Data Population
+
+-- Insert Blood Drives --
+INSERT INTO blooddrive (drive_name, drive_address, manager_last_name, manager_first_name, phone_num, last_drive_date) VALUES
+('Downtown Drive', '123 Main Street, Cityville, ST 12345', 'Johnson', 'Sarah', '555-100-1000', '2025-11-17'),
+('Campus Blood Drive', '456 University Ave, College Town, ST 12345', 'Williams', 'Michael', '555-200-2000', '2025-10-28'),
+('Community Center', '789 Park Road, Townsville, ST 12345', 'Davis', 'Emily', '555-300-3000', '2025-09-15'),
+('Corporate Plaza', '101 Business Blvd, Metro City, ST 12345', 'Martinez', 'Carlos', '555-400-4000', '2025-08-30'),
+('Faith Center Drive', '202 Church Lane, Peaceful, ST 12345', 'Anderson', 'Jennifer', '555-500-5000', '2025-07-20'),
+('Mobile Unit East', 'Various Locations', 'Thompson', 'Robert', '555-600-6000', '2025-11-01'),
+('Walk-In Center', 'Main Donation Center', 'Admin', 'Blood Bank', '555-000-0000', '2025-11-28');
 
 -- Insert Hospitals --
 INSERT INTO hospitals (hospital_name, address) VALUES
@@ -15,58 +25,59 @@ INSERT INTO hospitals (hospital_name, address) VALUES
 ('Summit Medical Institute', '606 Aspen Way, Summit, AZ 12345');
 
 -- Insert Donors --
--- last_donated_date is on or before December 1, 2025
-INSERT INTO donors (last_name, first_name, blood_type, phone_num, last_donated_date) VALUES
-('Torres', 'Kenneth', 'A-', '652-976-3785', '2025-11-17'),
-('Anderson', 'Frances', 'O-', '321-100-4633', '2025-10-28'),
-('Martin', 'Anna', 'A-', '938-486-3744', '2025-09-11'),
-('Brown', 'David', 'AB-', '328-604-0405', '2025-06-26'),
-('Anderson', 'Timothy', 'AB+', '234-177-6233', '2025-08-31'),
-('Adams', 'Joshua', 'O+', '407-773-0438', '2025-07-09'),
-('Miller', 'Heather', 'B-', '417-130-6610', '2025-10-28'),
-('Martin', 'Ashley', 'A+', '883-301-9108', '2025-05-27'),
-('Lopez', 'Soo', 'A-', '658-036-9062', '2025-08-12'),
-('Jones', 'Ronald', 'AB+', '648-705-0935', '2025-06-24'),
-('Perez', 'Ashley', 'O-', '699-500-3338', '2025-09-08'),
-('Martinez', 'Joshua', 'A+', '410-258-6472', '2025-04-29'),
-('Williams', 'Robert', 'B+', '482-891-5352', '2025-07-27'),
-('Wright', 'Lan', 'B-', '318-098-6587', '2025-05-07'),
-('Mitchell', 'Laura', 'B-', '503-004-2021', '2025-08-30'),
-('Jackson', 'Kimberly', 'A-', '230-064-4344', '2025-07-02'),
-('Harris', 'Jennifer', 'B+', '795-245-1714', '2025-11-01'),
-('Green', 'Joao', 'AB+', '595-573-6007', '2025-09-16'),
-('Robinson', 'Cynthia', 'B-', '907-459-7564', '2025-05-15'),
-('Jones', 'George', 'B+', '406-836-4210', '2025-06-03'),
-('Moore', 'Susan', 'B+', '475-946-5473', '2025-11-05'),
-('Anderson', 'Mike', 'AB-', '289-223-6474', '2025-11-15'),
-('Williams', 'Linda', 'A-', '411-175-8433', '2025-10-03'),
-('Young', 'Sarah', 'A-', '940-332-2344', '2025-09-02'),
-('Robinson', 'Carlos', 'A-', '736-484-1077', '2025-05-26'),
-('Miller', 'Frances', 'AB-', '879-060-5528', '2025-07-26'),
-('Adams', 'Ashley', 'B-', '652-034-0560', '2025-04-18'),
-('Nelson', 'Jane', 'O+', '760-919-1434', '2025-11-24'),
-('Brown', 'Carlos', 'O+', '466-861-9613', '2025-08-23'),
-('Hall', 'Debra', 'O-', '858-411-7778', '2025-08-04'),
-('Smith', 'David', 'A-', '704-458-4056', '2025-09-19'),
-('Martinez', 'Jacob', 'A+', '705-280-7273', '2025-08-02'),
-('Miller', 'Christine', 'O-', '496-662-8674', '2025-05-25'),
-('Carter', 'Jeffrey', 'O+', '226-399-5588', '2025-04-15'),
-('Baker', 'Steven', 'B+', '902-512-8689', '2025-08-06'),
-('Wilson', 'Donna', 'AB+', '151-465-8198', '2025-07-08'),
-('Robinson', 'Gary', 'AB+', '831-741-9179', '2025-04-04'),
-('Wilson', 'Jessica', 'AB+', '017-233-5248', '2025-11-28'),
-('Flores', 'Sarah', 'O-', '708-270-9651', '2025-11-19'),
-('Jackson', 'Lisa', 'A+', '572-320-0014', '2025-05-20'),
-('Anderson', 'Donna', 'B+', '318-245-9884', '2025-11-26'),
-('Anderson', 'George', 'AB+', '219-127-2964', '2025-11-28'),
-('Davis', 'Kathleen', 'O+', '555-109-8304', '2025-05-22'),
-('Thompson', 'James', 'O+', '928-748-8031', '2025-08-15'),
-('Nelson', 'Sharon', 'O+', '091-917-1076', '2025-08-05'),
-('Nguyen', 'Debra', 'AB+', '799-324-0682', '2025-06-20'),
-('Thomas', 'Sarah', 'B-', '300-440-0753', '2025-10-27'),
-('Torres', 'Mark', 'A-', '102-849-6198', '2025-09-15'),
-('Lopez', 'Emily', 'O-', '482-545-7104', '2025-09-14'),
-('Walker', 'Emily', 'B-', '522-752-3866', '2025-11-07');
+-- Each donor is assigned to a blood drive (drive_id)
+-- Distribution: drives 1-6 for donors from specific events, drive 7 (walk-in) for others
+INSERT INTO donors (last_name, first_name, blood_type, phone_num, last_donated_date, drive_id) VALUES
+('Torres', 'Kenneth', 'A-', '652-976-3785', '2025-11-17', 1),
+('Anderson', 'Frances', 'O-', '321-100-4633', '2025-10-28', 2),
+('Martin', 'Anna', 'A-', '938-486-3744', '2025-09-11', 3),
+('Brown', 'David', 'AB-', '328-604-0405', '2025-06-26', 7),
+('Anderson', 'Timothy', 'AB+', '234-177-6233', '2025-08-31', 4),
+('Adams', 'Joshua', 'O+', '407-773-0438', '2025-07-09', 5),
+('Miller', 'Heather', 'B-', '417-130-6610', '2025-10-28', 2),
+('Martin', 'Ashley', 'A+', '883-301-9108', '2025-05-27', 7),
+('Lopez', 'Soo', 'A-', '658-036-9062', '2025-08-12', 4),
+('Jones', 'Ronald', 'AB+', '648-705-0935', '2025-06-24', 7),
+('Perez', 'Ashley', 'O-', '699-500-3338', '2025-09-08', 3),
+('Martinez', 'Joshua', 'A+', '410-258-6472', '2025-04-29', 7),
+('Williams', 'Robert', 'B+', '482-891-5352', '2025-07-27', 5),
+('Wright', 'Lan', 'B-', '318-098-6587', '2025-05-07', 7),
+('Mitchell', 'Laura', 'B-', '503-004-2021', '2025-08-30', 4),
+('Jackson', 'Kimberly', 'A-', '230-064-4344', '2025-07-02', 5),
+('Harris', 'Jennifer', 'B+', '795-245-1714', '2025-11-01', 6),
+('Green', 'Joao', 'AB+', '595-573-6007', '2025-09-16', 3),
+('Robinson', 'Cynthia', 'B-', '907-459-7564', '2025-05-15', 7),
+('Jones', 'George', 'B+', '406-836-4210', '2025-06-03', 7),
+('Moore', 'Susan', 'B+', '475-946-5473', '2025-11-05', 6),
+('Anderson', 'Mike', 'AB-', '289-223-6474', '2025-11-15', 1),
+('Williams', 'Linda', 'A-', '411-175-8433', '2025-10-03', 2),
+('Young', 'Sarah', 'A-', '940-332-2344', '2025-09-02', 3),
+('Robinson', 'Carlos', 'A-', '736-484-1077', '2025-05-26', 7),
+('Miller', 'Frances', 'AB-', '879-060-5528', '2025-07-26', 5),
+('Adams', 'Ashley', 'B-', '652-034-0560', '2025-04-18', 7),
+('Nelson', 'Jane', 'O+', '760-919-1434', '2025-11-24', 1),
+('Brown', 'Carlos', 'O+', '466-861-9613', '2025-08-23', 4),
+('Hall', 'Debra', 'O-', '858-411-7778', '2025-08-04', 4),
+('Smith', 'David', 'A-', '704-458-4056', '2025-09-19', 3),
+('Martinez', 'Jacob', 'A+', '705-280-7273', '2025-08-02', 4),
+('Miller', 'Christine', 'O-', '496-662-8674', '2025-05-25', 7),
+('Carter', 'Jeffrey', 'O+', '226-399-5588', '2025-04-15', 7),
+('Baker', 'Steven', 'B+', '902-512-8689', '2025-08-06', 4),
+('Wilson', 'Donna', 'AB+', '151-465-8198', '2025-07-08', 5),
+('Robinson', 'Gary', 'AB+', '831-741-9179', '2025-04-04', 7),
+('Wilson', 'Jessica', 'AB+', '017-233-5248', '2025-11-28', 7),
+('Flores', 'Sarah', 'O-', '708-270-9651', '2025-11-19', 1),
+('Jackson', 'Lisa', 'A+', '572-320-0014', '2025-05-20', 7),
+('Anderson', 'Donna', 'B+', '318-245-9884', '2025-11-26', 1),
+('Anderson', 'George', 'AB+', '219-127-2964', '2025-11-28', 7),
+('Davis', 'Kathleen', 'O+', '555-109-8304', '2025-05-22', 7),
+('Thompson', 'James', 'O+', '928-748-8031', '2025-08-15', 4),
+('Nelson', 'Sharon', 'O+', '091-917-1076', '2025-08-05', 4),
+('Nguyen', 'Debra', 'AB+', '799-324-0682', '2025-06-20', 7),
+('Thomas', 'Sarah', 'B-', '300-440-0753', '2025-10-27', 2),
+('Torres', 'Mark', 'A-', '102-849-6198', '2025-09-15', 3),
+('Lopez', 'Emily', 'O-', '482-545-7104', '2025-09-14', 3),
+('Walker', 'Emily', 'B-', '522-752-3866', '2025-11-07', 6);
 
 -- Insert BloodUnit_Info --
 -- Donation dates are before Dec 1, 2025
